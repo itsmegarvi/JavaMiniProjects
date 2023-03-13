@@ -1,0 +1,8 @@
+
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Òƒ§€8ØæÛÐí0
+R
+java:S1854"6Remove this useless assignment to local variable "dd".(é›™8áæÛÐí0
+C
+java:S1481"'Remove this unused "dd" local variable.(é›™8äæÛÐí0
+L
+java:S1128	"*Remove this unused import 'java.util.Map'.(¼è½Òþÿÿÿÿ8éæÛÐí0

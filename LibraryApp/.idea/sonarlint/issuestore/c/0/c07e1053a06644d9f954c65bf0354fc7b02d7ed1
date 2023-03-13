@@ -1,0 +1,18 @@
+
+h
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 31 to the 15 allowed.(Çµí‘
+S
+java:S1854"=Remove this useless assignment to local variable "validator".(»„Û
+U
+java:S1854":Remove this useless assignment to local variable "choice".(øÕ£Üıÿÿÿÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(Ö‰Ï›
+D
+java:S1481".Remove this unused "validator" local variable.(»„Û
+M
+java:S1135'"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ
+M
+java:S1135*"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ
+M
+java:S1135A"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ
+M
+java:S1135D"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ
