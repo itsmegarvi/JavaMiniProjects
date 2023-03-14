@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan("com.*")
+@ComponentScan(basePackages = {"com.*"})
 public class MyFirstRestAppApplication {
 
     public static void main(String[] args) {
