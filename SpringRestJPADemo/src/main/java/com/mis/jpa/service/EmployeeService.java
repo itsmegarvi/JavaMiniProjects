@@ -32,7 +32,11 @@ public class EmployeeService {
         return "Employee deleted successfully.";
     }
 
-    public List<Employee> listall(){
+    public List<Employee> listAll(){
         return employeeRepository.findAll();
+    }
+
+    public Employee searchByEmail(String email){
+        return employeeRepository.findByEmail(email);
     }
 }

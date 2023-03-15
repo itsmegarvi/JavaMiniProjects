@@ -33,6 +33,16 @@ public class EmployeeController {
         return service.deleteEmployee(id);
     }
 
+    @GetMapping("/listall")
+    public List<Employee> listEmployees(){
+        return service.listAll();
+    }
+
+
+    @GetMapping("/searche/{email}")
+    public Employee searchEmployee(@PathVariable("email") String email){
+        return service.searchByEmail(email);
+    }
 
 
 }
