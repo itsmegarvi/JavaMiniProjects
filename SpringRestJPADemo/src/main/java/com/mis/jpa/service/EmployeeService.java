@@ -26,4 +26,13 @@ public class EmployeeService {
     public Employee searchEmployee(Long id){
         return employeeRepository.findById(id).orElse(null);
     }
+
+    public String deleteEmployee(long id){
+        employeeRepository.deleteById(id);
+        return "Employee deleted successfully.";
+    }
+
+    public List<Employee> listall(){
+        return employeeRepository.findAll();
+    }
 }

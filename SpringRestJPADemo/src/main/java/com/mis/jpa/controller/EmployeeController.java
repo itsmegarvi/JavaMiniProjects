@@ -28,4 +28,11 @@ public class EmployeeController {
         return service.searchEmployee(id);
     }
 
+    @DeleteMapping("/delete/{id}")
+    public String deleteEmployee(@PathVariable("id") long id){
+        return service.deleteEmployee(id);
+    }
+
+
+
 }
