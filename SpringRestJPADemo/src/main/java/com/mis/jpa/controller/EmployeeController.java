@@ -5,14 +5,27 @@ import com.mis.jpa.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class EmployeeController {
 
     @Autowired
     EmployeeService service;
 
-    @PostMapping(value = "/addemp")
+    @PostMapping("/addemp")
     public Employee add(@RequestBody Employee emp){
         return service.addEmployee(emp);
     }
+
+    @PostMapping(value = "/addemployees")
+    public List<Employee> addEmployees(@RequestBody List<Employee> employeeList){
+        return service.addEmployees(employeeList);
+    }
+
+    @GetMapping("/search/{id}")
+    public Employee searchEmployee(@PathVariable("id") long id){
+        return service.searchEmployee(id);
+    }
+
 }
