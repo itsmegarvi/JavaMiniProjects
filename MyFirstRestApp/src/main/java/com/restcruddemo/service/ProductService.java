@@ -24,7 +24,7 @@ public class ProductService {
     }
 
     public List<Product>listAll(){
-        return new ArrayList<Product>(data);
+        return new ArrayList<>(data);
     }
 
     public boolean add(Product product){
