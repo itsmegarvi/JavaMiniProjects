@@ -39,4 +39,8 @@ public class EmployeeService {
     public Employee searchByEmail(String email){
         return employeeRepository.findByEmail(email);
     }
+
+    public Employee searchByEmailAndSalary(String email,Double sal){
+        return employeeRepository.findByEmailAndSalary(email,sal);
+    }
 }

@@ -44,5 +44,8 @@ public class EmployeeController {
         return service.searchByEmail(email);
     }
 
-
+    @GetMapping("/search/{email}/{sal}")
+    public Employee searchEmployee(@PathVariable("email") String email,@PathVariable("sal") Double sal){
+        return service.searchByEmailAndSalary(email,sal);
+    }
 }

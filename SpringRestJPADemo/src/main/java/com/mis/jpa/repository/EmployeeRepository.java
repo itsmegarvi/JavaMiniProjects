@@ -11,5 +11,5 @@ public interface EmployeeRepository extends JpaRepository<Employee,Long> {
     public Employee findByEmail(String email);
 
     @Query("select x from Employee x where x.email=?1 and x.salary>?2")
-    public Employee findByEmailAndSalary(String s,double d);
+    public Employee findByEmailAndSalary(String s,Double d);
 }
