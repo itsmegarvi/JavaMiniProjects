@@ -48,4 +48,9 @@ public class EmployeeController {
     public Employee searchEmployee(@PathVariable("email") String email,@PathVariable("sal") Double sal){
         return service.searchByEmailAndSalary(email,sal);
     }
+
+    @PostMapping(value = "/update/{id}")
+    public String update(@PathVariable("id") long id,@RequestBody Employee e){
+        return service.updateEmployee(id,e);
+    }
 }

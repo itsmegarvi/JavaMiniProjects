@@ -43,4 +43,17 @@ public class EmployeeService {
     public Employee searchByEmailAndSalary(String email,Double sal){
         return employeeRepository.findByEmailAndSalary(email,sal);
     }
+
+    public String updateEmployee(long id, Employee e){
+        Employee emp = searchEmployee(id);
+        if(emp!=null){
+            emp.setName(e.getName());
+            emp.setEmail(e.getEmail());
+            emp.setSalary(e.getSalary());
+            employeeRepository.save(emp);
+            return "Employee " + emp.getId() + " details updated";
+        }
+
+        return "No such employee exists";
+    }
 }
