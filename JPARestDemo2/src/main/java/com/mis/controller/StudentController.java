@@ -18,15 +18,6 @@ public class StudentController {
         return service.addStudent(s);
     }
 
-    @PostMapping("/addlap")
-    public Laptop add(@RequestBody Laptop l){
-        return service.addLaptop(l);
-    }
-
-    @PostMapping("/add")
-    public String add(@RequestBody Student s, Laptop l){
-        return service.addStudAndLap(s,l);
-    }
 
     @GetMapping("/listallstud")
     public List<Student> listAllStud(){
@@ -38,9 +29,6 @@ public class StudentController {
         return service.listAlLap();
     }
 
-//    @GetMapping("/listall"){
-//        public List<>
-//    }
 
     @GetMapping("/getstud/{id}")
     public String getStud(@PathVariable("id") long id){
