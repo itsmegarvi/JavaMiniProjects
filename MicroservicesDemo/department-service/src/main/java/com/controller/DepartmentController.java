@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/departments")
 public class DepartmentController {
 
     @Autowired
@@ -20,5 +21,12 @@ public class DepartmentController {
     public Department getById(@PathVariable("id") long id){
         return service.searchById(id);
     }
+
+    @PutMapping("/update/{id}/{name}")
+    public Department update(@PathVariable("id") Long id, @PathVariable("name") String name){
+        return service.updateById(id,name);
+    }
+
+
 
 }

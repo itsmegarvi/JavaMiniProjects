@@ -17,4 +17,10 @@ public class DepartmentService {
     public Department searchById(long l){
         return departmentRepository.findById(l).orElseThrow(null);
     }
+
+    public Department updateById(Long id, String s){
+        Department d = departmentRepository.findByDepartmentId(id);
+        d.setDepartmentName(s);
+        return departmentRepository.save(d);
+    }
 }
