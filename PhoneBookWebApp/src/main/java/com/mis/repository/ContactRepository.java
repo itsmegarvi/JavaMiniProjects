@@ -1,10 +1,11 @@
 package com.mis.repository;
 
-import com.mis.entity.PhoneBook;
+import com.mis.entity.Contact;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PhoneBookRepository extends JpaRepository<PhoneBook,Long> {
+public interface ContactRepository extends JpaRepository<Contact,Long> {
 
+    public Contact findByPersonId(Long id);
 }

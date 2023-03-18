@@ -1,20 +1,19 @@
 package com.mis.entity;
 
-import com.mis.model.Email;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter @Setter @ToString
-public class PhoneBook {
+public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long personId;
+    @Column(name = "name",nullable = false)
     private String name;
     private String emails;
     private String dob;
