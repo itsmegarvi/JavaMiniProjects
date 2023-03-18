@@ -53,6 +53,7 @@ public class UserService {
 
     //First doing it without exceptions
     //Then try with taking care of exceptions
+    //Now that i know about patch this one might have been the ideal patch situation
     public Department modifyDepartment(Long id, String depName) throws DepartmentIdDoesNotExistException {
         Users user = userRepository.findByUserId(id);
         System.out.println(user);
