@@ -3,7 +3,10 @@ package com.mis.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @NoArgsConstructor
@@ -13,12 +16,13 @@ public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long personId;
-    @Column(name = "name",nullable = false)
+
+    @Column(nullable = false)
     private String name;
     private String emails;
     private String dob;
 
-    @OneToMany(targetEntity = PhoneNumbers.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "pid",referencedColumnName = "personId")
-    private List<PhoneNumbers> phoneNums;
+    @OneToMany( cascade = CascadeType.ALL,orphanRemoval = true)
+
+    private Set<PhoneNumbers> phoneNums = new HashSet<>();
 }

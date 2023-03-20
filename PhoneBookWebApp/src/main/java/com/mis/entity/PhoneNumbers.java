@@ -1,19 +1,21 @@
 package com.mis.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString
 public class PhoneNumbers {
-
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long pid;
-
     @Id
-    private Long phoneNumber;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
+
+    @Column(nullable = false,unique = true)
+    private String phoneNumber;
+
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name="personId")
+//    private Contact contact;
 
 }
