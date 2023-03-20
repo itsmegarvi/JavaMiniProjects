@@ -1,6 +1,8 @@
 package com.mis.controller;
 
 import com.mis.entity.Contact;
+import com.mis.exception.ContactNotFoundException;
+import com.mis.exception.InvalidPersonIdException;
 import com.mis.service.ContactService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,5 +40,17 @@ public class ContactController {
         return service.deleteContact(id);
     }
 
+    @PutMapping("/update/{id}")
+    public Contact update(@PathVariable("id") Long id, @RequestBody String emails) throws InvalidPersonIdException {
+        return service.updateContact(id,emails);
+    }
+
+    @GetMapping("/nameSearch/{name}")
+    public Contact searchByName(@PathVariable("name") String name) throws ContactNotFoundException {
+        return service.searchByName(name);
+    }
+
+//    @GetMapping("/phoneNumSearch/{phoneNum}")
+//    public Contact
 
 }

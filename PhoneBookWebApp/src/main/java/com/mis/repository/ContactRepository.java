@@ -8,4 +8,8 @@ import org.springframework.stereotype.Repository;
 public interface ContactRepository extends JpaRepository<Contact,Long> {
 
     public Contact findByPersonId(Long id);
+
+    public Contact findByName(String str);
+
+//    public Contact findByPhoneNums();
 }

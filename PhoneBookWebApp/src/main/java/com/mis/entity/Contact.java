@@ -23,6 +23,5 @@ public class Contact {
     private String dob;
 
     @OneToMany( cascade = CascadeType.ALL,orphanRemoval = true)
-
     private Set<PhoneNumbers> phoneNums = new HashSet<>();
 }
