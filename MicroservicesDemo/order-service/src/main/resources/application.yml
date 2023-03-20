@@ -1,0 +1,40 @@
+server:
+  port: 6976
+
+spring:
+  application:
+    name: order-service
+    eureka:
+  client:
+    service-url:
+      defaultZone: http://localHost:8761/eureka
+      fetch-registry: true
+      register-with-eureka: true
+
+    resilence4j:
+      circuitbreaker:
+      instances:
+      orderService:
+      registerHealthIndicator: true
+      eventConsumerBufferSize: 10
+      automaticTransitionFromOpenToHalfOpenEnabled: true
+      failureRateThreshold: 50
+      minimumNumberOfCalls: 5
+      pernittedNumberOfCallsInHalfOpenState: 3
+      SlidingWindowSize: 10
+      waitDurationInOpenState: 5s
+      slidingWindowType: COUNT_BASED
+
+      management:
+      health:
+      circuitbreakers:
+        enabled:true
+
+      endpoints:
+      web:
+      exposure:
+      include: health
+
+      endpoint:
+        health:
+      show-details: always
