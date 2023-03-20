@@ -6,4 +6,14 @@ public class Roles {
         USER
     }
 
+    public enum DAYS{
+        MON,
+        TUE,
+        WED,
+        THUR,
+        FRI,
+        SAT,
+        SUN
+    }
+
 }

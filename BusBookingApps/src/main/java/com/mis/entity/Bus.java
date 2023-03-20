@@ -19,11 +19,7 @@ public class Bus {
     private String source;
     private String destination;
     private int distance;
-    private String travelDays;
+    private List<Roles.DAYS> travelDays;
     private String duration;
-
-    @OneToMany(mappedBy = "Bus", cascade = CascadeType.ALL, orphanRemoval = true,fetch = FetchType.EAGER)
-    @JsonManagedReference
-    private List<Bookings> bookings =new ArrayList<>();
 
 }

@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EntityScan(basePackages = "com.mis.entity")
 @ComponentScan(basePackages = "com.mis.*")
-@EnableJpaRepositories
+@EnableJpaRepositories(basePackages = "com.mis.repository")
 public class BusBookingAppsApplication {
 
     public static void main(String[] args) {

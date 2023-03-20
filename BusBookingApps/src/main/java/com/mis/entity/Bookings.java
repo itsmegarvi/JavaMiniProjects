@@ -13,8 +13,5 @@ public class Bookings {
 
     private int seatNum;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "busName",referencedColumnName = "busName")
-    @JsonBackReference
-    private Bus bus;
+    private String busName;
 }
