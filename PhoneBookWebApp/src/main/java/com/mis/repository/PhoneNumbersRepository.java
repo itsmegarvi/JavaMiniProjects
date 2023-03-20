@@ -10,4 +10,5 @@ import java.util.List;
 public interface PhoneNumbersRepository extends JpaRepository<PhoneNumbers,Long> {
 
     public List<PhoneNumbers> findByPhoneNumber(String number);
+
 }

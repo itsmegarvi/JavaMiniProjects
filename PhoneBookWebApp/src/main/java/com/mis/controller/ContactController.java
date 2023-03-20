@@ -45,12 +45,31 @@ public class ContactController {
         return service.updateContact(id,emails);
     }
 
-    @GetMapping("/nameSearch/{name}")
-    public Contact searchByName(@PathVariable("name") String name) throws ContactNotFoundException {
+    @GetMapping("/nameSearch")
+    public List<Contact> searchByName(@RequestBody String name) throws ContactNotFoundException {
         return service.searchByName(name);
     }
 
-//    @GetMapping("/phoneNumSearch/{phoneNum}")
-//    public Contact
+    @GetMapping("/phoneNumSearch")
+    public Contact searchByPhoneNumber(@RequestBody String phonNum) throws ContactNotFoundException{
+        return service.searchByNumber(phonNum);
+    }
+
+    @GetMapping("/nameContaining")
+    public List<Contact> searchForName(@RequestBody String name) throws ContactNotFoundException{
+        return service.searchForName(name);
+    }
+
+    @GetMapping("emails")
+    public List<Contact> searchByEmail(@RequestBody String email) throws ContactNotFoundException{
+        return service.searchByEmail(email);
+    }
+
+    @GetMapping("/email")
+    public List<Contact> searchEmail(@RequestBody String email) throws ContactNotFoundException{
+        return service.searchEmail(email);
+    }
+
+
 
 }

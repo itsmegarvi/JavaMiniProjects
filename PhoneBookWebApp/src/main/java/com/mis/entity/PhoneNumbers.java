@@ -1,5 +1,6 @@
 package com.mis.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -14,8 +15,9 @@ public class PhoneNumbers {
     @Column(nullable = false,unique = true)
     private String phoneNumber;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name="personId")
-//    private Contact contact;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "personId")
+    @JsonBackReference
+    private Contact contact;
 
 }

@@ -1,5 +1,6 @@
 package com.mis.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,6 +23,7 @@ public class Contact {
     private String emails;
     private String dob;
 
-    @OneToMany( cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany( mappedBy ="contact", cascade =  CascadeType.ALL,orphanRemoval = true,fetch = FetchType.EAGER)
+    @JsonManagedReference
     private Set<PhoneNumbers> phoneNums = new HashSet<>();
 }
