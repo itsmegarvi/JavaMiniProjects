@@ -1,0 +1,37 @@
+server:
+  port: 6970
+
+spring:
+  application:
+    name: spring-cloud-gateway
+
+
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: http://localhost:6969/users/
+          predicates:
+            - Path=/users/**
+
+        - id: department-service
+          uri: http://localhost:6968/departments/
+          predicates:
+            - Path=/departments/**
+
+        - id: item-service
+          uri: http://localhost:6975/items/
+          predicates:
+            - Path=/items/**
+
+        - id: order-service
+          uri: http://localhost:6976/order/
+          predicates:
+            - Path=/order/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localHost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
