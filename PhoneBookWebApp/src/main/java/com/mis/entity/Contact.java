@@ -3,10 +3,7 @@ package com.mis.entity;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -20,10 +17,13 @@ public class Contact {
 
     @Column(nullable = false)
     private String name;
-    private String emails;
     private String dob;
 
     @OneToMany( mappedBy ="contact", cascade =  CascadeType.ALL,orphanRemoval = true,fetch = FetchType.EAGER)
     @JsonManagedReference
     private Set<PhoneNumbers> phoneNums = new HashSet<>();
+
+    @OneToMany(mappedBy = "contact",cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.EAGER)
+    @JsonManagedReference
+    private Set<Email> emails = new HashSet<>();
 }

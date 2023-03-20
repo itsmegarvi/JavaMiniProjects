@@ -2,15 +2,12 @@ package com.mis.controller;
 
 import com.mis.entity.Contact;
 import com.mis.exception.ContactNotFoundException;
-import com.mis.exception.InvalidPersonIdException;
 import com.mis.service.ContactService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-
 @RestController
 @RequestMapping("/PB")
 public class ContactController {
@@ -41,8 +38,8 @@ public class ContactController {
     }
 
     @PutMapping("/update/{id}")
-    public Contact update(@PathVariable("id") Long id, @RequestBody String emails) throws InvalidPersonIdException {
-        return service.updateContact(id,emails);
+    public Contact update(@PathVariable("id") Long id, @RequestBody String s) throws ContactNotFoundException {
+        return service.update(id,s);
     }
 
     @GetMapping("/nameSearch")
@@ -55,21 +52,18 @@ public class ContactController {
         return service.searchByNumber(phonNum);
     }
 
+    @GetMapping("/emailSearch")
+    public List<Contact> emailSearch(@RequestBody String email) throws ContactNotFoundException{
+        return service.searchByEmail(email);
+    }
+
     @GetMapping("/nameContaining")
     public List<Contact> searchForName(@RequestBody String name) throws ContactNotFoundException{
         return service.searchForName(name);
     }
 
-    @GetMapping("emails")
-    public List<Contact> searchByEmail(@RequestBody String email) throws ContactNotFoundException{
-        return service.searchByEmail(email);
+    @GetMapping("/emailContaining")
+    public List<Contact> emailContaining(@RequestBody String str) throws ContactNotFoundException{
+        return service.emailsContaining(str);
     }
-
-    @GetMapping("/email")
-    public List<Contact> searchEmail(@RequestBody String email) throws ContactNotFoundException{
-        return service.searchEmail(email);
-    }
-
-
-
 }
