@@ -7,15 +7,15 @@ import jakarta.persistence.Id;
 import lombok.*;
 
 @Entity
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString
-public class ExchangeValue {
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+public class CurrencyConversion {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long id;
-
+    private long conversionId;
     private String currencyFrom;
-
     private String currencyTo;
-
-    private double conversionMultiple;
 }
